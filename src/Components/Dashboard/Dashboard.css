@@ -1,0 +1,293 @@
+.Dashboard {
+  width: 100%;
+  height: 100vh;
+}
+.dashboard-container {
+  position: absolute;
+  margin-top: 5em;
+  width: 100%;
+}
+.dashboard-holder {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 80vh;
+  justify-content: space-between;
+  row-gap: 0px;
+}
+.dashboard-holder-top {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.dashboard-holder-bottom {
+  width: 100%;
+  height: 100%;
+  border-top: 1px solid white;
+}
+.dashboard-bottom {
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  height: 100%;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  margin-top: 2em;
+}
+.dashboard-bottom::-webkit-scrollbar {
+  display: none;
+}
+.dashboard-left {
+  height: 100%;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  border-right: 0.3px solid white;
+}
+.dashboard-left::-webkit-scrollbar {
+  display: none;
+}
+.dashboard-right {
+  height: 100%;
+  width: 100%;
+}
+.dashboard-holder-bottom {
+  height: 40%;
+  width: 99%;
+}
+.right-holder {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+
+.display-right {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-top: 0.7em;
+}
+.display-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+.display-currencies {
+  margin-top: 2.5em;
+}
+.opportunity-add-remove {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1em;
+}
+.opportunity-icon {
+  background-color: #87cefa;
+  color: black;
+  width: 3em;
+  height: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.opprtunity-details-display {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2em;
+  width: 100%;
+  height: 10%;
+}
+.opportunity-display-name {
+  font-size: 2em;
+  font-weight: bold;
+}
+.opportunity-display-company {
+  font-size: 1em;
+  margin-top: 1em;
+}
+
+.opportunity-display {
+  width: 50%;
+  height: 50%;
+  margin-left: 8em;
+  margin-top: 2em;
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  row-gap: 1em;
+}
+.oppotunity-bar {
+  height: 25%;
+  background: white;
+  width: auto;
+  border-radius: 1em;
+}
+.bar1 {
+  width: 25%;
+  background-color: #ff2600;
+}
+.bar2 {
+  width: 50%;
+  background-color: orange;
+}
+.bar3 {
+  width: 75%;
+  background-color: yellowgreen;
+}
+.bar4 {
+  width: 100%;
+  background-color: green;
+}
+.opportunity-key {
+  width: 40%;
+  display: flex;
+  margin-top: 2em;
+  flex-direction: row;
+  margin-left: 8em;
+  column-gap: 3em;
+  text-align: center;
+  justify-content: center;
+}
+.key1 {
+  background-color: #ff2600;
+  border-radius: 50%;
+}
+.key2 {
+  background-color: orange;
+  border-radius: 50%;
+}
+.key3 {
+  background-color: yellowgreen;
+  border-radius: 50%;
+}
+.key4 {
+  background-color: green;
+  border-radius: 50%;
+}
+.key {
+  text-align: center;
+  width: 1em;
+  height: 1em;
+}
+.key > p {
+  margin-top: 2em;
+  font-size: 8px;
+  margin-left: -1.5em;
+}
+/* ============================== */
+
+.dashboard-form {
+  width: 70%;
+  height: 70%;
+  position: absolute;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.9);
+  top: 15%;
+  margin-left: 10em;
+  border-radius: 12px;
+}
+.dashboard-form-holder > form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+.form-cancel {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+.form-group {
+  color: lightblue;
+}
+.opp-submit-button {
+  padding: 2px;
+  font-size: 15px;
+  width: 40%;
+  border-radius: 12px;
+  font-weight: bold;
+}
+.Opportunities-item {
+  background: linear-gradient(to bottom, white, #c0bcbc);
+  color: black;
+  row-gap: 1em;
+  border-radius: 8px;
+  text-indent: 1em;
+  justify-content: space-between;
+  height: auto;
+  padding: 2px;
+  margin-bottom: 0.5em;
+}
+
+.Opportunities-item-oppComp {
+  font-size: 1.5em;
+  font-weight: bolder;
+}
+/* .Opportunities-holder {
+  padding: 6px;
+} */
+.account-form-holder {
+  position: absolute;
+  top: 20%;
+  margin-left: 30%;
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 30px;
+  width: 40%;
+  height: 30%;
+}
+.account-form-holder > form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  margin-left: 2em;
+}
+.create-acc-btn {
+  width: 10em;
+  padding: 6px;
+  border-radius: 12px;
+}
+.add-icon {
+  font-size: 20px;
+  margin-left: 0.7em;
+  position: fixed;
+  top: 1em;
+  left: 5em;
+  padding: 5px;
+
+  width: auto;
+  height: 1em;
+  display: flex;
+  flex-direction: row;
+}
+.add-icon > p {
+  font-size: 10px;
+  margin-left: 1em;
+}
+.Accounts {
+  background: linear-gradient(to bottom, white, #c0bcbc);
+  display: flex;
+  flex-direction: column;
+  color: black;
+  margin-top: 0.3em;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.account-name {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.account-email {
+  font-size: 1em;
+}
