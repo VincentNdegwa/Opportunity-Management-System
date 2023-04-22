@@ -97,11 +97,18 @@ function RightHolder(props) {
     });
     localStorage.removeItem("data");
     localStorage.setItem("data", JSON.stringify(newData));
-  }, [props.currentUser.id, props.accId, props.opportunityId, props.savedData]);
-  console.log(Discovery);
-  console.log(Proposal);
-  console.log(Shared);
-  console.log(Negotiations);
+  }, [
+    props.currentUser.id,
+    props.accId,
+    props.opportunityId,
+    props.savedData,
+    Discovery,
+    Proposal,
+  ]);
+  // console.log(Discovery);
+  // console.log(Proposal);
+  // console.log(Shared);
+  // console.log(Negotiations);
   return (
     <div className="dashboard-right">
       <div className="right-holder">
@@ -145,11 +152,11 @@ function RightHolder(props) {
           <div className="display-currencies">{currentOpp?.oppAmount} Ksh</div>
 
           <div className="opportunity-add-remove">
-            <div className="opportunity-icon add" onClick={props.addOpp}>
-              +
+            <div className="opportunity-icon add " onClick={props.addOpp}>
+              <button>Add Opportunity</button>
             </div>
             <div className="opportunity-icon remove" onClick={props.removeOpp}>
-              -
+              <button>Delete Opportunity</button>
             </div>
           </div>
         </div>

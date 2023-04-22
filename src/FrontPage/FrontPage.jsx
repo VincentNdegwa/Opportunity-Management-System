@@ -25,7 +25,7 @@ function FrontPage() {
   React.useEffect(() => {
     localStorage.setItem("user", JSON.stringify(currentUser));
     localStorage.setItem("data", JSON.stringify(savedData));
-  }, [savedData]);
+  }, [savedData, currentUser]);
 
   // function clearLocalStorage() {
   //   localStorage.clear();
@@ -62,7 +62,7 @@ function FrontPage() {
       setPasswordError(true);
       setAccess(false);
     } else {
-      setAccess(!false);
+      // setAccess(!false);
       setUserId(currentUser.id);
       navigate(`/user/${currentUser.id}`);
     }
@@ -75,6 +75,7 @@ function FrontPage() {
     const password1 = event.target.elements.password1.value;
     const password2 = event.target.elements.password2.value;
     if (password1 === password2) {
+      setError(false);
       const newUser = {
         id: Date.now(),
         username: name,

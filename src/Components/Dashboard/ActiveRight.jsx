@@ -33,11 +33,11 @@ function ActiveRight(props) {
         <div className="display-left">
           <div className="display-currencies">00000 Ksh</div>
           <div className="opportunity-add-remove">
-            <div className="opportunity-icon add" onClick={props.addOpp}>
-              +
+            <div className="opportunity-icon add " onClick={props.addOpp}>
+              <button>Add Opportunity</button>
             </div>
             <div className="opportunity-icon remove" onClick={props.removeOpp}>
-              -
+              <button>Delete Opportunity</button>
             </div>
           </div>
         </div>

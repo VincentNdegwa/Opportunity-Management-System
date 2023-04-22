@@ -142,7 +142,7 @@ function Dashboard(props) {
       if (person.id === props.currentUser.id) {
         console.log(person);
         person.userAcc.forEach((acc) => {
-          if (acc.nameCompany === oppComp) {
+          if (acc.nameCompany === oppObject.oppComp) {
             acc.opportunity.push(oppObject);
             console.log(acc);
           }
@@ -202,6 +202,7 @@ function Dashboard(props) {
         menuClick={menuClick}
         renderOpportunities={renderOpportunities}
         renderCompnanies={renderCompnanies}
+        renderOpp={renderOpp}
         clicked={clicked}
         currentUser={props.currentUser}
         logOut={props.logOut}

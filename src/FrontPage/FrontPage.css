@@ -21,6 +21,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 12px;
+  border: 1px solid #32baf0;
 }
 /* form {
   background: green;
@@ -31,10 +32,14 @@ label {
 
 input {
   border: 0px;
-  height: 2em;
-  width: 75%;
+  height: 2.5em;
+  width: 100%;
   border-radius: 5px;
   text-indent: 0.5em;
+  font-size: 1.3em;
+}
+input:focus {
+  outline: none;
 }
 .normal-buttons {
   padding: 9px;
@@ -43,13 +48,15 @@ input {
 }
 .small-button {
   background: transparent;
-  color: blue;
+  color: #32baf0;
+  font-size: 1.3em;
 }
 button {
   border: 0px;
 }
 small {
-  font-size: 10px;
+  font-size: 1.3em;
+  font-weight: bold;
 }
 .pass-no-match {
   color: #c70606;
