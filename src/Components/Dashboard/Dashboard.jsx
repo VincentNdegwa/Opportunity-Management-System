@@ -14,7 +14,6 @@ import { useNavigate } from "react-router-dom";
 
 function Dashboard(props) {
   const navigate = useNavigate();
-  console.log(props);
   const [clicked, setClicked] = React.useState(false);
   const [renderOpp, setRenderOpp] = React.useState(true);
   const [renderComp, setRenderComp] = React.useState(false);
@@ -30,11 +29,11 @@ function Dashboard(props) {
   const [opportunityId, setOpportunityId] = React.useState();
 
   function displayOppId(id) {
-    console.log(id);
+    // console.log(id);
     setOpportunityId(id);
     setRenderRightHolder(true);
   }
-  console.log(props.savedData);
+  // console.log(props.savedData);
 
   //   console.log(Opportunity);
 
@@ -79,7 +78,7 @@ function Dashboard(props) {
   }
 
   function displayAccOpp(id) {
-    console.log(id);
+    // console.log(id);
     setAccId(id);
   }
 
@@ -105,7 +104,7 @@ function Dashboard(props) {
     localStorage.clear();
     localStorage.setItem("data", JSON.stringify([]));
     localStorage.setItem("data", JSON.stringify(savedData));
-    console.log(savedData);
+    // console.log(savedData);
     setPopAccount(false);
 
     // setOpportunity(
@@ -140,7 +139,7 @@ function Dashboard(props) {
 
     const updatedData = savedData.map((person) => {
       if (person.id === props.currentUser.id) {
-        console.log(person);
+        // console.log(person);
         person.userAcc.forEach((acc) => {
           if (acc.nameCompany === oppObject.oppComp) {
             acc.opportunity.push(oppObject);
