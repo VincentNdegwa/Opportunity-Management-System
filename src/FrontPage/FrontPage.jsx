@@ -27,11 +27,6 @@ function FrontPage() {
     localStorage.setItem("data", JSON.stringify(savedData));
   }, [savedData, currentUser]);
 
-  // function clearLocalStorage() {
-  //   localStorage.clear();
-  //   localStorage.setItem("data", JSON.stringify([]));
-  // }
-
   function goToLogin() {
     setLogin(true);
   }
@@ -48,25 +43,37 @@ function FrontPage() {
     event.preventDefault();
     const username = event.target.elements.username.value;
     const userpassword = event.target.elements.userpassword.value;
-    console.log("Username and password submitted:", username, userpassword);
-    console.log(savedData);
+    // console.log("Username and password submitted:", username, userpassword);
+    // console.log(savedData);
     const defaultUser = savedData.find(
       (item) => item.username === username && item.password === userpassword
     );
     setCurrentUser(defaultUser);
+    if (Object.keys(defaultUser).length > 0) {
+      navigate(`/user/${currentUser.id}`);
+    } else {
+      navigate("/");
+    }
   }
 
   React.useEffect(() => {
-    console.log("Current user found:", currentUser);
+    // console.log("Current user found:", currentUser);
     if (!currentUser || Object.keys(currentUser).length === 0) {
       setPasswordError(true);
       setAccess(false);
     } else {
-      // setAccess(!false);
+      setAccess(true);
       setUserId(currentUser.id);
-      navigate(`/user/${currentUser.id}`);
     }
   }, [currentUser]);
+
+  // if (access) {
+  //   navigate(`/user/${currentUser.id}`);
+  //   console.log("access is true");
+  // } else {
+  //   navigate("/");
+  //   console.log("access if false");
+  // }
 
   function createAccount(event) {
     event.preventDefault();
@@ -95,7 +102,6 @@ function FrontPage() {
       setError(true);
     }
   }
-  console.log(savedData);
 
   const Front = () => {
     if (login) {
@@ -167,6 +173,7 @@ function FrontPage() {
         </div>
       );
   };
+
   return (
     <div>
       <Routes>
@@ -179,9 +186,11 @@ function FrontPage() {
           }
         />
         <Route
+          // path={access ? `/user/:${userId}` : `/`}
           path="/user/:id"
           element={
             <Homepage
+              access={access}
               currentUser={currentUser}
               userId={userId}
               savedData={savedData}

@@ -4,33 +4,40 @@ import Welcome from "../Components/Welcome/Welcome";
 import { useNavigate } from "react-router-dom";
 
 function Homepage(props) {
-  const [Data, setData] = React.useState(props.savedData);
-  const [userName, setUserName] = React.useState(props.currentUser.username);
-  const [userData, setUserData] = React.useState(props.currentUser);
-  const [currentUser, setCurrentUser] = React.useState(props.currentUser);
+  // const [Data, setData] = React.useState(props.savedData);
+  // const [userName, setUserName] = React.useState(props.currentUser.username);
+  // const [userData, setUserData] = React.useState(props.currentUser);
+  const [currentUser, setCurrentUser] = React.useState(
+    JSON.parse(localStorage.getItem("user"))
+  );
   const navigate = useNavigate();
-  React.useEffect(() => {
-    setData(props.savedData);
-    setUserName(props.currentUser.username);
-    setUserData(props.currentUser);
-  }, []);
+  // React.useEffect(() => {
+  //   setData(props.savedData);
+  //   setUserName(props.currentUser.username);
+  //   setUserData(props.currentUser);
+  // }, [props.savedData, props.currentUser.username, props.currentUser]);
   React.useEffect(() => {
     localStorage.setItem("user", JSON.stringify(currentUser));
-    setCurrentUser(JSON.parse(localStorage.getItem("user")));
-  }, []);
+    // setCurrentUser(JSON.parse(localStorage.getItem("user")));
+  });
   function goDashboard() {
     navigate(`/Dashboard/${props.currentUser.id}`);
   }
   return (
     <div className="Homepage">
       <Header
-        Data={Data}
-        userName={userName}
-        userData={userData}
+        Data={props.savedData}
+        userName={props.currentUser.username}
+        userData={props.currentUser}
         logOut={props.logOut}
         goDashboard={goDashboard}
       />
-      <Welcome Data={Data} userName={userName} userData={userData} />
+      <Welcome
+        Data={props.savedData}
+        userName={props.currentUser.username}
+        userData={props.currentUser}
+        setCurrentUser={setCurrentUser}
+      />
     </div>
   );
 }
